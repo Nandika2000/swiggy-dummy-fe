@@ -16,10 +16,7 @@ function HomePage(){
         setSearchDish(event.target.value);
       };
     const handleClick = () =>{
-        if(!isClicked)
         setIsClicked(true);
-        else
-        setIsClicked(false);
     }
     useEffect(()=>{
          makeRequest(getRestaurantsName).then( (data) =>{

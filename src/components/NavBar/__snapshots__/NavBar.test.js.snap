@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar component Should match snapshot 1`] = `
+<div>
+  <nav
+    class="navbar-content"
+  >
+    <h1
+      class="title"
+    >
+      SWIGGY
+    </h1>
+  </nav>
+</div>
+`;

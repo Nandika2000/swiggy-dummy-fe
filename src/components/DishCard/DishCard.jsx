@@ -1,9 +1,8 @@
-
-
-function DishCard({RestName,setIsClicked})
+function DishCard({RestName,setIsClicked, setSearchDish})
 {
     const handleClick = ()=> {
         setIsClicked(false);
+        setSearchDish('');
     }
     const rawRestNames = RestName.messgae;
     if(rawRestNames.length === 0)

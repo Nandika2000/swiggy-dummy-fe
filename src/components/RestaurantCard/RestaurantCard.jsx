@@ -15,13 +15,13 @@ function RestaurantCard({restaurantsName}){
     }
     return (
        
-        <div>
-          {updatedRestNames.map((task) => (
-            <button className="edit-task-btn" onClick={()=>handleClick(task.id)} >
-            <div className="task-cards" key={task.id}>
-            <h2>{task.name}</h2>
-            <h3>Cost for 2 - Rs.{task.costForTwo}</h3>
-            <h3>{task.location}</h3> 
+        <div data-testid='RestCardContainer'>
+          {updatedRestNames.map((Restaurant) => (
+            <button data-testid='RestCardBtn' onClick={()=>handleClick(Restaurant.id)} >
+            <div data-testid='RestCard' className="Restaurant-cards" key={Restaurant.id}>
+            <h2 data-testid='RestName'>{Restaurant.name}</h2>
+            <h3 data-testid='RestCost'>Cost for 2 - Rs.{Restaurant.costForTwo}</h3>
+            <h3 data-testid='RestLoc'>{Restaurant.location}</h3> 
             </div>
             </button>
           ))}

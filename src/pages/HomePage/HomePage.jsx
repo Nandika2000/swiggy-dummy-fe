@@ -16,7 +16,10 @@ function HomePage(){
         setSearchDish(event.target.value);
       };
     const handleClick = () =>{
+        if(!isClicked)
         setIsClicked(true);
+        else
+        setIsClicked(false);
     }
     useEffect(()=>{
          makeRequest(getRestaurantsName).then( (data) =>{
@@ -39,10 +42,10 @@ function HomePage(){
 
     return(<div>
     <div>
-    <input placeholder="dish-name" onChange={handleChange}></input>
+    <input placeholder="dish-name" onChange={handleChange} value = {searchDish}></input>
     <button onClick={handleClick}>Search</button>
     </div>
-    {isClicked ? <DishCard RestName={searchByDish} setIsClicked={setIsClicked}/>:isRestInitialised ? <RestaurantCard restaurantsName={restaurantsName} /> :<div/>}
+    {isClicked ? <DishCard RestName={searchByDish} setIsClicked={setIsClicked} setSearchDish={setSearchDish}/>:isRestInitialised ? <RestaurantCard restaurantsName={restaurantsName} /> :<div/>}
     </div>);
 }
     export default HomePage;

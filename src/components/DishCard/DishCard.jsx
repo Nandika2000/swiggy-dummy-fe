@@ -7,23 +7,23 @@ function DishCard({RestName,setIsClicked, setSearchDish})
     const rawRestNames = RestName.messgae;
     if(rawRestNames.length === 0)
     {
-        return (<div>
-            <h2>ummmmmmmmmm...... NO RESULTS FOUND</h2>
-            <button onClick={handleClick}>BACK</button>
+        return (<div data-testid='noResultContainer'>
+            <h2 data-testid = 'noResults'>ummmmmmmmmm...... NO RESULTS FOUND</h2>
+            <button data-testid='back-btn' onClick={handleClick}>BACK</button>
         </div>)
     }
     else {
         const updatedRestNames = rawRestNames.map((item) => ({ dishName: item.dishName ,price: item.price ,rating:item.rating, restaurant:item.restaurant.restaurantName}))
     return (
        
-        <div>
+        <div data-testid='ResultConatiner'>
           {updatedRestNames.map((task) => (
         
-            <div className="task-cards" >
-            <h2>{task.dishName}</h2>
-            <h3>PRICE - Rs.{task.price}</h3>
-            <h3>RATING - {task.rating}</h3> 
-            <h3>{task.restaurant}</h3>
+            <div data-testid='restCard' className="task-cards" >
+            <h2 data-testid='dishName'>{task.dishName}</h2>
+            <h3 data-testid='price'>PRICE - Rs.{task.price}</h3>
+            <h3 data-testid='rating'>RATING - {task.rating}</h3> 
+            <h3 data-testid='restName'>{task.restaurant}</h3>
             </div>
           ))}
            <button onClick={handleClick}>BACK</button>
